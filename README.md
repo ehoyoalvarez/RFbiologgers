@@ -1,21 +1,22 @@
 # Seabass Welfare Classification Using Biologger Data
 
-This repository contains code to classify welfare states in European seabass (*Dicentrarchus labrax*) from biologger-derived physiological and behavioural data using a Random Forest model.
+This repository contains code to classify welfare states in European seabass (*Dicentrarchus labrax*) from biologger-derived physiological and behavioural data using a Random Forest (RF) model.
 
 ## Contents
 
 - `scripts/`
-  - `01_train_validate_RF.R` – Train and Validate the Random Forest model
-  - `02_apply_model_dummy.R` – Apply the model to a dummy dataset
+  - `01_train_validate_RF.R` – Train, explore hyperparameters, and validate the RF model. 
+  - `02_apply_model_dummy.R` – Apply the pre-trained RF model to a dummy dataset for demonstration.
 - `data/`
-  - `labelled_data.xlsx` – Annotated biologger dataset for model development
-  - `dummy_dataset.csv` – Simulated dataset for testing and reproducibility
+  - `labelled_data.xlsx` – Annotated biologger dataset for model development.
+  - `dummy_dataset.csv` – Simulated dataset matching the original structure for testing and reproducibility.
 
 ## Workflow
 
-1. **Train** the model on annotated biologger data (HR and ACC).  
-2. **Validate** model performance using cross-validation.  
-3. **Apply** the model to new data (dummy dataset provided for demonstration).
+1. **Train** the RF model on annotated HR and ACC data.  
+2. **Validate** model performance using cross-validation and test set metrics (accuracy, F1, ROC-AUC).  
+3. **Save** the trained model as `rf_model_v8.rds` (optional; users can create it themselves).  
+4. **Apply** the model to new data (dummy dataset provided for reproducibility and demonstration).
 
 ## Usage
 
@@ -23,15 +24,18 @@ This repository contains code to classify welfare states in European seabass (*D
   git clone https://github.com/yourusername/RFbiologgers.git
 
 2. Set your R working directory to the repository folder.
-  Run scripts in order: 01_train_validate_RF.R, 03_apply_model_dummy.R.
-
-3. Inspect output metrics and predicted welfare states.
+   
+3. Run scripts in order:
+    source("scripts/01_train_validate_RF.R")  # Train and validate model
+    source("scripts/02_apply_RF_dummy.R")     # Apply model to dummy dataset
+   
+4. Inspect output metrics, variable importance, confusion matrices, and predicted welfare states.
 
 ## Notes
 
-- dummy_dataset.csv is for testing only and matches the structure of the original data.
+- dummy_dataset.csv is for demonstration only and simulates the structure of new HR and ACC observations.
 - Original data are available from the corresponding author on reasonable request.
-- Scripts are fully commented for reproducibility.
+- All scripts are fully commented for reproducibility.
 
-Correspondence: ehoyo@imedea.uib-csic.es
+*Correspondence*: ehoyo@imedea.uib-csic.es
 
