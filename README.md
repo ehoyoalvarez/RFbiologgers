@@ -9,6 +9,7 @@ This repository contains code to classify welfare states in European seabass (*D
   - `02_validate_model.R` – Validate model performance (precision, recall, F1-score)
   - `03_apply_model_dummy.R` – Apply the model to a dummy dataset
 - `data/`
+  - `labelled_data.xlsx` – Annotated biologger dataset for model development
   - `dummy_dataset.csv` – Simulated dataset for testing and reproducibility
 
 ## Workflow
