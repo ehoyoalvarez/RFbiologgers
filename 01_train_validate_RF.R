@@ -159,3 +159,8 @@ ggplot(test_set, aes(x = hr_std, y = acc_std, color = rf_pred)) +
   labs(title = "RF Predictions on Test Set",
        x = "Standardized HR", y = "Standardized ACC", color = "Predicted State") +
   theme_minimal()
+
+# -------------------------------
+# 8. Save model
+# -------------------------------
+saveRDS(rf_v8, "rf_model_v8.rds")
