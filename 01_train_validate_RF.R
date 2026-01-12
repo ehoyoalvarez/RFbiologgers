@@ -153,7 +153,7 @@ print(cv_model)
 # -------------------------------
 # 7. Scatter plot of predicted states
 # -------------------------------
-test_set$rf_pred <- predictions
+test_set$rf_pred <- test_predictions
 ggplot(test_set, aes(x = hr_std, y = acc_std, color = rf_pred)) +
   geom_point(alpha = 0.7, size = 3) +
   labs(title = "RF Predictions on Test Set",
@@ -161,6 +161,6 @@ ggplot(test_set, aes(x = hr_std, y = acc_std, color = rf_pred)) +
   theme_minimal()
 
 # -------------------------------
-# 8. Save model
+# 8. Save model (optional)
 # -------------------------------
-saveRDS(rf_v8, "rf_model_v8.rds")
+saveRDS(rf_v8, "rf_model_v8.rds") # Save the trained model
