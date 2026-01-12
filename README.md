@@ -5,9 +5,8 @@ This repository contains code to classify welfare states in European seabass (*D
 ## Contents
 
 - `scripts/`
-  - `01_train_model.R` – Train the Random Forest model
-  - `02_validate_model.R` – Validate model performance (precision, recall, F1-score)
-  - `03_apply_model_dummy.R` – Apply the model to a dummy dataset
+  - `01_train_validate_RF.R` – Train and Validate the Random Forest model
+  - `02_apply_model_dummy.R` – Apply the model to a dummy dataset
 - `data/`
   - `labelled_data.xlsx` – Annotated biologger dataset for model development
   - `dummy_dataset.csv` – Simulated dataset for testing and reproducibility
@@ -24,7 +23,7 @@ This repository contains code to classify welfare states in European seabass (*D
   git clone https://github.com/yourusername/RFbiologgers.git
 
 2. Set your R working directory to the repository folder.
-  Run scripts in order: 01_train_model.R, 02_validate_model.R, 03_apply_model_dummy.R.
+  Run scripts in order: 01_train_validate_RF.R, 03_apply_model_dummy.R.
 
 3. Inspect output metrics and predicted welfare states.
 
