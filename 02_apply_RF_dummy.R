@@ -10,6 +10,10 @@ library(randomForest)
 library(dplyr)
 
 # ---------------------------
+# 0. Note: ensure rf_model_v8.rds exists by running 01_train_validate_RF.R
+# ---------------------------
+
+# ---------------------------
 # 1. Load the pre-trained model
 # ---------------------------
 # Replace the path with the location of your saved model
